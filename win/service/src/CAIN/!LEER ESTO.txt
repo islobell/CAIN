@@ -1,0 +1,3 @@
+El proyecto requiere que se copie a las carpetas 'Debug' y 'Release' los siguientes archivos:
+- El archivo 'bass.dll', que se encuentra en la carpeta 'libs' del proyecto.
+- El archivo 'CAIN.conf', que se encuentra en GitHub (https://github.com/islobell/CAIN/tree/master/win/service/doc). Modificar el fichero con los valores apropiados para cada clave.
