@@ -107,7 +107,7 @@ namespace ConsoleApp
 
                         string id = f.GetTrackIdFromFingerprint(fingerprint);
 
-                        Console.WriteLine("AcoustID: " + id);
+                        Console.WriteLine("MBID: " + id);
                     }
                     catch (System.Exception ex)
                     {
