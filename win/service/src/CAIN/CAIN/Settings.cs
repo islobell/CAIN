@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace CAIN
@@ -58,9 +59,9 @@ namespace CAIN
         {
             Settings settings = new Settings();
 
-            if (!System.IO.File.Exists(file)) return settings;
+            if (!File.Exists(file)) return settings;
 
-            using (System.IO.StreamReader ini = System.IO.File.OpenText(file))
+            using (StreamReader ini = File.OpenText(file))
             {
                 Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
                 settings = (Settings) serializer.Deserialize(ini, typeof(Settings));

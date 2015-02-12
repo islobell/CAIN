@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace CAIN
@@ -21,14 +22,15 @@ namespace CAIN
         {
             List<string> hashes = new List<string>();
 
-            if (!System.IO.File.Exists(file)) return hashes;
+            //(sólo para pruebas)
+            // if (!File.Exists(file)) return hashes;
 
-            System.IO.StreamReader reader = new System.IO.StreamReader(file);
+            //StreamReader reader = new StreamReader(file);
 
-            while (!reader.EndOfStream)
-                hashes.Add(reader.ReadLine());
+            //while (!reader.EndOfStream)
+            //    hashes.Add(reader.ReadLine());
 
-            reader.Close();
+            //reader.Close();
 
             return hashes;
         }
@@ -51,7 +53,7 @@ namespace CAIN
 
             /* Si el archivo IDX existe, lo sobreescribimos; si no existe, lo creamos */
 
-            System.IO.StreamWriter writer = new System.IO.StreamWriter(file);
+            StreamWriter writer = new StreamWriter(file);
 
             foreach (string hash in hashes)
                 writer.WriteLine(hash);
@@ -60,7 +62,7 @@ namespace CAIN
 
             /* Añadimos el atributo 'oculto' al archivo IDX */
 
-            System.IO.File.SetAttributes(file, System.IO.File.GetAttributes(file) | System.IO.FileAttributes.Hidden);
+            File.SetAttributes(file, File.GetAttributes(file) | FileAttributes.Hidden);
 
             return true;
         }

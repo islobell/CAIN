@@ -6,12 +6,15 @@ USE `MusicDB`;
 Tabla 'Albums', que guardará la información relativa a los álbumes
 Tiene los siguientes campos:
  - ID: clave principal
+ - MBID: identificador univoco del album 
  - Title: título del albúm
  */
 CREATE TABLE IF NOT EXISTS `Albums` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `MBID` VARCHAR(36) NOT NULL,  
   `Title` VARCHAR(50) NOT NULL, 
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  INDEX (`MBID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* 
@@ -32,29 +35,24 @@ CREATE TABLE IF NOT EXISTS `TrackAlbums` (
 Tabla 'Tracks', que guardará la información relativa a las pistas de audio
 Tiene los siguientes campos:
  - ID: clave principal
- - Acoustid: identificador univoco de la pista de audio
+ - MBID: identificador univoco de la pista de audio 
+ - Title: título de la pista
+ - Year: año de publicación
+ - Duration: duración de la pista en ms
  - PathDst: ubicación en disco del archivo una vez catalogado
  - Status: estado de la canción (habrán 3 estados: 1) sin resultados; 2) catalogada; 3) no catalogada)
- - Duration: duración de la pista en ms
- - Bitrate: tasa de bits
- - Channels: número de canales (mono o estéreo)
- - Samplerate: tasa de frecuencia
- - Format: MP3, WMA, WAV, etc...
- - Size: tamaño del archivo en disco en MB
+
  */
 CREATE TABLE IF NOT EXISTS `Tracks` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Acoustid` VARCHAR(36) NOT NULL,  
+  `MBID` VARCHAR(36) NOT NULL,  
+  `Title` VARCHAR(50) DEFAULT NULL,
+  `Year` INT UNSIGNED DEFAULT 0,
+  `Duration` INT UNSIGNED DEFAULT 0,
   `PathDst` VARCHAR(260) DEFAULT NULL,
   `Status` INT UNSIGNED DEFAULT 0, 
-  `Duration` INT UNSIGNED DEFAULT 0,
-  `Bitrate` INT UNSIGNED DEFAULT 0,
-  `Channels` INT UNSIGNED DEFAULT 0,
-  `Samplerate` INT UNSIGNED DEFAULT 0,
-  `Format` VARCHAR(50) DEFAULT NULL,
-  `Size` INT UNSIGNED DEFAULT 0,
   PRIMARY KEY (`ID`),
-  INDEX (`Acoustid`)
+  INDEX (`MBID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* 
@@ -91,12 +89,15 @@ CREATE TABLE IF NOT EXISTS `TrackTags` (
 Tabla 'Artists', que guardará la información relativa a los artistas
 Tiene los siguientes campos:
  - ID: clave principal
+ - MBID: identificador univoco del artista
  - Name: nombre de la etiqueta
  */
 CREATE TABLE IF NOT EXISTS `Artists` (
   `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `MBID` VARCHAR(36) NOT NULL,  
   `Name` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  INDEX (`MBID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* 

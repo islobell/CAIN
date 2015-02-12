@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace CAIN
@@ -125,7 +126,7 @@ namespace CAIN
         /// </returns>
         public string CalculateMD5Hash()
         {
-            using (System.IO.FileStream stream = System.IO.File.OpenRead(this.TagLibFile.Name))
+            using (FileStream stream = File.OpenRead(this.TagLibFile.Name))
             {
                 byte[] hash = AudioFile.MD5.ComputeHash(stream);
                 return BitConverter.ToString(hash).Replace("-", String.Empty).ToLower();

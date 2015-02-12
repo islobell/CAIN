@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAIN\AudioCataloguer.cs" />
     <Compile Include="CAIN\AudioDecoder.cs" />
     <Compile Include="CAIN\AudioFile.cs" />
     <Compile Include="CAIN\BassDecoder.cs" />
