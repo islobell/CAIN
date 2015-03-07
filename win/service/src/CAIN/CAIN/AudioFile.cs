@@ -35,6 +35,16 @@ namespace CAIN
         private TagLib.File TagLibFile;
 
         /// <summary>
+        ///    Huella digital acústica.
+        /// </summary>
+        public string Fingerprint { get; private set; }
+
+        /// <summary>
+        ///    Identificador unívoco o MBID (MusicBrainz Identifier) del contenido acústico del archivo.
+        /// </summary>
+        public string Id { get; private set; }
+
+        /// <summary>
         ///    Mensaje de error (si se produce alguno).
 		/// </summary>
         public string Error { get; private set; }
@@ -139,17 +149,22 @@ namespace CAIN
         /// <returns>
         ///    La huella digital, si se ha podido calcular. Una cadena vacía, si no.
         /// </returns>
-        public string CalculateFingerprint()
+        public bool CalculateFingerprint()
         {
             AudioFile.Decoder.Load(this.TagLibFile.Name);
 
-            if (!AudioFile.Decoder.Ready) return String.Empty;
+            if (!AudioFile.Decoder.Ready)
+            { 
+                this.Fingerprint = String.Empty;
+                return false;
+            }
 
             AudioFile.Fingerprinter.Start(AudioFile.Decoder.SampleRate, AudioFile.Decoder.Channels);
             AudioFile.Decoder.Decode(AudioFile.Fingerprinter.Consumer, 120);
             AudioFile.Fingerprinter.Finish();
 
-            return AudioFile.Fingerprinter.GetFingerprint();
+            this.Fingerprint = AudioFile.Fingerprinter.GetFingerprint();
+            return true;
         }
 
         /// <summary>
@@ -161,18 +176,40 @@ namespace CAIN
         /// <returns>
         ///    El identificador, si se ha podido obtener. Una cadena vacía, si no.
         /// </returns>
-        public string GetTrackIdFromFingerprint(string fingerprint)
+        public bool GetTrackIdFromFingerprint()//string fingerprint)
         {
             /* ¡OJO! La duración del audio la necesitamos en segundos */
 
             int duration = (int) this.TagLibFile.Properties.Duration.TotalSeconds;
-            List<AcoustID.Web.LookupResult> results = AudioFile.LookupService.Get(fingerprint, duration);
+            List<AcoustID.Web.LookupResult> results = AudioFile.LookupService.Get(this.Fingerprint, duration);
 
-            if (results.Count == 0) return String.Empty;
+            if (results.Count == 0)
+            {
+                this.Id = String.Empty;
+                return false;
+            }
 
             /* Cogemos el primer registro, pues tiene el "score" más alto (o sea, que es el más fiable) */
 
-            return results[0].Id;
+            this.Id = results[0].Id;
+            return true;
+        }
+
+        public void GetMetadataFromInternet(int option, List<Album> storedAlbums, out Album album)
+        {
+            string[] metadata = { "recordings", "releasegroups", "compress" };
+
+            /* ¡OJO! La duración del audio la necesitamos en segundos */
+
+            int duration = (int)this.TagLibFile.Properties.Duration.TotalSeconds;
+
+            /* Obtenemos una lista de resultados posibles relacionados con la huella digital */
+
+            List<AcoustID.Web.LookupResult> results = AudioFile.LookupService.Get(this.Fingerprint, duration, metadata);
+
+            /* Obtenemos los metadatos que mejor se ajustan a la opción seleccionada  */
+
+            MetadataResolver.Resolve(option, results, this.TagLibFile.Tag, storedAlbums, out album);
         }
     }
 }
