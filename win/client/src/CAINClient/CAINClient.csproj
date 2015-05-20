@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E63C9E6-451F-4B7C-806F-9868E80FE309}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAINClient</RootNamespace>
+    <AssemblyName>CAINClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcoustID">
+      <HintPath>packages\AcoustID.0.0.2\lib\net40\AcoustID.dll</HintPath>
+    </Reference>
+    <Reference Include="CoverArtArchive">
+      <HintPath>packages\CoverArtArchive.2.0.0\lib\CoverArtArchive.dll</HintPath>
+    </Reference>
+    <Reference Include="MusicBrainz">
+      <HintPath>packages\MusicBrainz.1.3.0\lib\MusicBrainz.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.taglib-sharp">
+      <HintPath>packages\taglib.2.1.0.0\lib\policy.2.0.taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAIN\AcoustIDInfo.cs" />
+    <Compile Include="CAIN\Album.cs" />
+    <Compile Include="CAIN\Artist.cs" />
+    <Compile Include="CAIN\AudioDecoder.cs" />
+    <Compile Include="CAIN\DB.cs" />
+    <Compile Include="CAIN\DBAlbums.cs" />
+    <Compile Include="CAIN\DBArtists.cs" />
+    <Compile Include="CAIN\DBConnection.cs" />
+    <Compile Include="CAIN\DBTable.cs" />
+    <Compile Include="CAIN\DBTags.cs" />
+    <Compile Include="CAIN\DBTrackAlbums.cs" />
+    <Compile Include="CAIN\DBTrackArtists.cs" />
+    <Compile Include="CAIN\DBTracks.cs" />
+    <Compile Include="CAIN\DBTrackTags.cs" />
+    <Compile Include="CAIN\Entity.cs" />
+    <Compile Include="CAIN\IDBTable.cs" />
+    <Compile Include="CAIN\IDXFile.cs" />
+    <Compile Include="CAIN\Logger.cs" />
+    <Compile Include="CAIN\Metadata.cs" />
+    <Compile Include="CAIN\MetadataComparer.cs" />
+    <Compile Include="CAIN\MetadataResolver.cs" />
+    <Compile Include="CAIN\MetadataResolver1.cs" />
+    <Compile Include="CAIN\MetadataResolver2.cs" />
+    <Compile Include="CAIN\NAudioDecoder.cs" />
+    <Compile Include="CAIN\Playlist.cs" />
+    <Compile Include="CAIN\Settings.cs" />
+    <Compile Include="CAIN\Song.cs" />
+    <Compile Include="CAIN\Tag.cs" />
+    <Compile Include="CAIN\Track.cs" />
+    <Compile Include="CAIN\Utils.cs" />
+    <Compile Include="DataGridViewCustomizer.cs" />
+    <Compile Include="EditionPanelValues.cs" />
+    <Compile Include="EntityFilter.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlbum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlbum.Designer.cs">
+      <DependentUpon>frmAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColumns.Designer.cs">
+      <DependentUpon>frmColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFind.Designer.cs">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScan.Designer.cs">
+      <DependentUpon>frmScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTag.Designer.cs">
+      <DependentUpon>frmTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTags.Designer.cs">
+      <DependentUpon>frmTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCManager.cs" />
+    <Compile Include="SingletonApp.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlbum.resx">
+      <DependentUpon>frmAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColumns.resx">
+      <DependentUpon>frmColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScan.resx">
+      <DependentUpon>frmScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTag.resx">
+      <DependentUpon>frmTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTags.resx">
+      <DependentUpon>frmTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <None Include="Resources\wand.png" />
+    <None Include="Resources\tag_green.png" />
+    <None Include="Resources\tag_blue_edit.png" />
+    <None Include="Resources\tag_blue_edit.ico" />
+    <None Include="Resources\tag_blue_delete.png" />
+    <None Include="Resources\tag_blue_add.png" />
+    <None Include="Resources\tag_blue_add.ico" />
+    <None Include="Resources\tag_blue.png" />
+    <None Include="Resources\tag_blue.ico" />
+    <None Include="Resources\page_delete.png" />
+    <None Include="Resources\page_add.png" />
+    <None Include="Resources\music.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\folder_magnify.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\door_in.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\control_stop_blue.png" />
+    <None Include="Resources\control_play_blue.png" />
+    <None Include="Resources\control_equalizer_blue.png" />
+    <None Include="Resources\cog_delete.png" />
+    <None Include="Resources\cog_add.png" />
+    <None Include="Resources\cd.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\bullet_arrow_up.png" />
+    <None Include="Resources\bullet_arrow_down.png" />
+    <None Include="Resources\brick_delete.png" />
+    <None Include="Resources\brick_add.png" />
+    <None Include="Resources\arrow_refresh.png" />
+    <None Include="Resources\app.png" />
+    <None Include="Resources\app.ico" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,29 @@
+Para agregar las referencias que necesita el proyecto hacer lo siguiente:
+
+TagLib# 2.1.0
+-------------
+En la consola de NuGet escribir: 'Install-Package taglib'.
+
+Json.NET 6.0.8
+-------------
+En la consola de NuGet escribir: 'Install-Package Newtonsoft.Json'.
+
+AcoustID 0.0.2
+-------------
+En la consola de NuGet escribir: 'Install-Package AcoustID'.
+
+NAudio 1.7.2
+-------------
+En la consola de NuGet escribir: 'Install-Package NAudio'.
+
+MusicBrainz v2 .Net 1.3.0
+-------------
+En la consola de NuGet escribir: 'Install-Package MusicBrainz'.
+
+MusicBrainz CoverArtArchive Web.API 2.0.0
+-------------
+En la consola de NuGet escribir: 'Install-Package CoverArtArchive'.
+
+MySql.Data 6.9.6
+-------------
+En la consola de NuGet escribir: 'Install-Package MySql.Data'.
