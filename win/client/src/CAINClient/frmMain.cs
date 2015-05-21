@@ -249,7 +249,7 @@ namespace CAINClient
 
             /* Borramos la información de la base de datos y la carpeta de música */
 
-            string PathScript = AppDomain.CurrentDomain.BaseDirectory + @"..\..\..\..\..\..\db\script_0.1a.sql";
+            string PathScript = AppDomain.CurrentDomain.BaseDirectory + @"..\..\..\..\..\..\db\script.sql";
 
             if (Directory.Exists(theApp.Settings.PathDst))
                 Directory.Delete(theApp.Settings.PathDst, true);
@@ -956,9 +956,10 @@ namespace CAINClient
 
             /* Actualizamos la barra de estado */
 
-            this.statusBar.Items["statusTotal"].Text = this.DisplayedEntities.Count.ToString();
             this.statusBar.Items["statusNoCataloged"].Text = this.DisplayedEntities.Count(item => item.Track.Status != CAIN.Track.StatusTypes.Cataloged).ToString();
             this.statusBar.Items["statusCataloged"].Text = this.DisplayedEntities.Count(item => item.Track.Status == CAIN.Track.StatusTypes.Cataloged).ToString();
+            this.statusBar.Items["statusDisplayed"].Text = this.DisplayedEntities.Count.ToString(); 
+            this.statusBar.Items["statusTotal"].Text = this.Entities.Count.ToString();
         }
 
         /// <summary>

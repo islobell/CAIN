@@ -74,14 +74,16 @@
             this.toolColumns = new System.Windows.Forms.ToolStripComboBox();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusSelected = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusCataloged = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusNoCataloged = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusSelected = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusDisplayed = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -118,8 +120,6 @@
             this.menuStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPlaylist = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusDisplayed = new System.Windows.Forms.ToolStripStatusLabel();
             this.menu.SuspendLayout();
             this.toolBar.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -537,45 +537,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(364, 20);
             this.toolStripStatusLabel1.Spring = true;
             // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.AutoSize = false;
-            this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(110, 20);
-            this.toolStripStatusLabel2.Text = "Seleccionadas: ";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // statusSelected
-            // 
-            this.statusSelected.AutoSize = false;
-            this.statusSelected.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
-            this.statusSelected.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
-            this.statusSelected.Name = "statusSelected";
-            this.statusSelected.Size = new System.Drawing.Size(70, 20);
-            this.statusSelected.Text = "0";
-            this.statusSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.AutoSize = false;
-            this.toolStripStatusLabel4.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(100, 20);
-            this.toolStripStatusLabel4.Text = "Mostradas: ";
-            this.toolStripStatusLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // statusTotal
-            // 
-            this.statusTotal.AutoSize = false;
-            this.statusTotal.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
-            this.statusTotal.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
-            this.statusTotal.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
-            this.statusTotal.Name = "statusTotal";
-            this.statusTotal.Size = new System.Drawing.Size(70, 20);
-            this.statusTotal.Text = "0";
-            this.statusTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.AutoSize = false;
@@ -613,6 +574,64 @@
             this.statusNoCataloged.Size = new System.Drawing.Size(70, 20);
             this.statusNoCataloged.Text = "0";
             this.statusNoCataloged.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.AutoSize = false;
+            this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(110, 20);
+            this.toolStripStatusLabel2.Text = "Seleccionadas: ";
+            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // statusSelected
+            // 
+            this.statusSelected.AutoSize = false;
+            this.statusSelected.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.statusSelected.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
+            this.statusSelected.Name = "statusSelected";
+            this.statusSelected.Size = new System.Drawing.Size(70, 20);
+            this.statusSelected.Text = "0";
+            this.statusSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.AutoSize = false;
+            this.toolStripStatusLabel4.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabel4.Text = "Mostradas: ";
+            this.toolStripStatusLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // statusDisplayed
+            // 
+            this.statusDisplayed.AutoSize = false;
+            this.statusDisplayed.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.statusDisplayed.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
+            this.statusDisplayed.Name = "statusDisplayed";
+            this.statusDisplayed.Size = new System.Drawing.Size(70, 20);
+            this.statusDisplayed.Text = "0";
+            this.statusDisplayed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.AutoSize = false;
+            this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabel3.Text = "Total: ";
+            this.toolStripStatusLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // statusTotal
+            // 
+            this.statusTotal.AutoSize = false;
+            this.statusTotal.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
+            this.statusTotal.BorderStyle = System.Windows.Forms.Border3DStyle.Etched;
+            this.statusTotal.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
+            this.statusTotal.Name = "statusTotal";
+            this.statusTotal.Size = new System.Drawing.Size(70, 20);
+            this.statusTotal.Text = "0";
+            this.statusTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timer
             // 
@@ -1019,24 +1038,6 @@
             this.menuPlaylist.Size = new System.Drawing.Size(235, 22);
             this.menuPlaylist.Text = "Crear lista de reproducción...";
             this.menuPlaylist.Click += new System.EventHandler(this.menuFilePlaylist_Click);
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.AutoSize = false;
-            this.toolStripStatusLabel3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(100, 20);
-            this.toolStripStatusLabel3.Text = "Total: ";
-            this.toolStripStatusLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // statusDisplayed
-            // 
-            this.statusDisplayed.AutoSize = false;
-            this.statusDisplayed.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
-            this.statusDisplayed.Margin = new System.Windows.Forms.Padding(0, 2, 5, 2);
-            this.statusDisplayed.Name = "statusDisplayed";
-            this.statusDisplayed.Size = new System.Drawing.Size(70, 20);
-            this.statusDisplayed.Text = "0";
             // 
             // frmMain
             // 
