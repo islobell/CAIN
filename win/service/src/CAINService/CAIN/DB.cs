@@ -522,9 +522,25 @@ namespace CAIN
         /// <summary>
         ///    Elimina toda la información de la base de datos.
         /// </summary> 
-        public void DeleteAll()
+        public bool DeleteAll()
         {
-            this.DBTracks.DeleteAll();
+            this.DBConnection.BeginTransaction();
+
+            try
+            {
+                this.DBTracks.DeleteAll();
+                this.DBAlbums.DeleteAll();
+                this.DBArtists.DeleteAll();
+                this.DBTags.DeleteAll(); 
+            
+                this.DBConnection.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.DBConnection.Rollback();
+                return false;
+            }             
         }   
            
         /// <summary>

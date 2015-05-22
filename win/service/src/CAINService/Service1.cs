@@ -144,9 +144,11 @@ namespace CAINService
 
                 if (this.Settings.Reset)
                 {
-                    this.DB.DeleteAll();
-                    if (Directory.Exists(this.Settings.PathDst))
-                        Directory.Delete(this.Settings.PathDst, true);
+                    if (this.DB.DeleteAll())
+                    {
+                        if (Directory.Exists(this.Settings.PathDst))
+                            Directory.Delete(this.Settings.PathDst, true);
+                    }
                 }
 
                 /* Calculamos el número de archivos a escanear */

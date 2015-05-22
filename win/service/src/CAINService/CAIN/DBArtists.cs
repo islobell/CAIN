@@ -141,6 +141,17 @@ namespace CAIN
             return result == 1 ? true : false;
         }
 
+        /// <summary>
+        /// Elimina todos los artistas/grupos de la base de datos.
+        /// </summary> 
+        public void DeleteAll()
+        {
+            string sql = "DELETE FROM Artists";
+
+            MySqlCommand cmd = new MySqlCommand(sql, this.Connection);
+            cmd.ExecuteNonQuery();
+        }
+
         public void DeleteNotUsed()
         {
             string sql = "DELETE FROM Artists WHERE ID NOT IN (SELECT ArtistID FROM TrackArtists)";

@@ -241,6 +241,17 @@ namespace CAIN
             int result = cmd.ExecuteNonQuery();
 
             return result == 1 ? true : false;
+        }
+
+        /// <summary>
+        /// Elimina todos los álbumes de la base de datos.
+        /// </summary> 
+        public void DeleteAll()
+        {
+            string sql = "DELETE FROM Albums";
+
+            MySqlCommand cmd = new MySqlCommand(sql, this.Connection);
+            cmd.ExecuteNonQuery();
         }  
 
         /// <summary>

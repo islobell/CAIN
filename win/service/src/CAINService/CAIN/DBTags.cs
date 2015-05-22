@@ -168,13 +168,13 @@ namespace CAIN
             return result == 1 ? true : false;
         }
 
-        public void DeleteAll(long TrackID)
+        public void DeleteAll(long trackID = 0)
         {
-            string sql = "DELETE FROM Tags WHERE ID IN (SELECT TagID FROM TrackTags WHERE TrackID = @TrackID)";
+            string sql = trackID > 0 ? "DELETE FROM Tags WHERE ID IN (SELECT TagID FROM TrackTags WHERE TrackID = @TrackID)" : "DELETE FROM Tags";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.Connection);
-            cmd.Parameters.AddWithValue("@TrackID", TrackID);
-            int result = cmd.ExecuteNonQuery();
+            if (trackID > 0) cmd.Parameters.AddWithValue("@TrackID", trackID);
+            cmd.ExecuteNonQuery();
         }
 
         public void DeleteNotUsed()
