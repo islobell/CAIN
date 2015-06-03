@@ -80,8 +80,13 @@ namespace CAINClient
                     elements = entities.Select(item => String.Join(", ", item.Artists.Select(y => y.Name))).ToList();
                     break;
                 case "Tag":
-                    elements = entities.Select(item => item.Tags.FirstOrDefault(y => y.Name == view.Columns[columnIndex].HeaderText).Name).ToList();
-                    break;
+                    foreach (CAIN.Entity entity in entities)
+                    {
+                        CAIN.Tag t = entity.Tags.FirstOrDefault(item => item.Name == view.Columns[columnIndex].HeaderText);
+                        elements.Add(t != null ? t.Value : String.Empty);
+                    }  
+                    //elements = entities.Select(item => item.Tags.FirstOrDefault(y => y.Name == view.Columns[columnIndex].HeaderText).Name).ToList();
+                    break;                                                                                                                       
                 default: 
                     Debug.Assert(false); 
                     break;

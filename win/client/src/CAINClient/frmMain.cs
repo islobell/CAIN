@@ -142,7 +142,7 @@ namespace CAINClient
             /* Si hemos seleccionado al menos una entidad y su estado es distinto a 'Sin resultados'... */
 
             if (this.SelectedIndexes.Count > 0 &&
-                this.SelectedEntities.TrueForAll(item => item.Track.Reliability <= 80 && item.Album.Year > 0))
+                this.SelectedEntities.TrueForAll(item => item.Track.Reliability <= 80))// && item.Album.Year > 0))
             {
                 this.menuFileConfirm.Enabled = true;
                 this.toolFileConfirm.Enabled = true;
@@ -683,7 +683,14 @@ namespace CAINClient
 
             if (this.dgvView.SelectedRows.Count == 0)
             {
+                /* Vaciamos los controles del panel izquierdo */
+
                 this.ClearLeftPanelControls();
+
+                /* Actualizamos la información de la barra de estado */
+
+                this.statusBar.Items["statusSelected"].Text = "0";
+
                 return;
             }
 

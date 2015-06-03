@@ -95,6 +95,7 @@
             this.lbxTags.Location = new System.Drawing.Point(15, 15);
             this.lbxTags.Margin = new System.Windows.Forms.Padding(15);
             this.lbxTags.Name = "lbxTags";
+            this.lbxTags.ScrollAlwaysVisible = true;
             this.lbxTags.Size = new System.Drawing.Size(229, 230);
             this.lbxTags.TabIndex = 2;
             this.lbxTags.DoubleClick += new System.EventHandler(this.lbxTags_DoubleClick);

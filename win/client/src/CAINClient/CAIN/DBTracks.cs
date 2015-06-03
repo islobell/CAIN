@@ -119,31 +119,39 @@ namespace CAIN
             string sql = count > 0 ? "SELECT * FROM Tracks LIMIT @Count" : "SELECT * FROM Tracks";
 
             MySqlCommand cmd = new MySqlCommand(sql, this.Connection);
-            if (count > 0) cmd.Parameters.AddWithValue("@Count", count);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            if (count > 0) cmd.Parameters.AddWithValue("@Count", count);         
+            
+            List<Track> tracks = new List<Track>();                
 
-            List<Track> tracks = new List<Track>();
-
-            if (!reader.HasRows)
+            try
             {
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (!reader.HasRows)
+                {
+                    reader.Close();
+                    return tracks;
+                }
+
+                while (reader.Read())
+                {
+                    Track track = new Track();
+                    track.ID = reader.GetInt32(reader.GetOrdinal("ID"));
+                    track.MBID = reader.GetString(reader.GetOrdinal("MBID"));
+                    track.Title = reader.GetString(reader.GetOrdinal("Title"));
+                    track.Duration = reader.GetInt32(reader.GetOrdinal("Duration"));
+                    track.Path = reader.GetString(reader.GetOrdinal("Path"));
+                    track.Status = (Track.StatusTypes)reader.GetInt32(reader.GetOrdinal("Status"));
+                    track.Reliability = reader.GetInt32(reader.GetOrdinal("Reliability"));
+
+                    tracks.Add(track);
+                }
                 reader.Close();
-                return tracks;
             }
-
-            while (reader.Read())
+            catch (MySqlException ex)
             {
-                Track track = new Track();
-                track.ID = reader.GetInt32(reader.GetOrdinal("ID"));
-                track.MBID = reader.GetString(reader.GetOrdinal("MBID"));
-                track.Title = reader.GetString(reader.GetOrdinal("Title"));
-                track.Duration = reader.GetInt32(reader.GetOrdinal("Duration"));
-                track.Path = reader.GetString(reader.GetOrdinal("Path"));
-                track.Status = (Track.StatusTypes)reader.GetInt32(reader.GetOrdinal("Status"));
-                track.Reliability = reader.GetInt32(reader.GetOrdinal("Reliability"));
 
-                tracks.Add(track);
             }
-            reader.Close();
 
             return tracks;
         }

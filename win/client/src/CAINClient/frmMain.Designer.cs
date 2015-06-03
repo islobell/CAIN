@@ -36,11 +36,11 @@
             this.menuFileUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFileColumns = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuFileFind = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFilePending = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuFileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFileFind = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFileConfirm = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFilePlaylist = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +62,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolFileColumns = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolFileFind = new System.Windows.Forms.ToolStripButton();
             this.toolFileSave = new System.Windows.Forms.ToolStripButton();
+            this.toolFileFind = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolFilePending = new System.Windows.Forms.ToolStripButton();
             this.toolFileConfirm = new System.Windows.Forms.ToolStripButton();
@@ -158,11 +158,11 @@
             this.menuFileUpdate,
             this.toolStripMenuItem1,
             this.menuFileColumns,
-            this.toolStripMenuItem6,
-            this.menuFileFind,
-            this.menuFileSave,
-            this.toolStripMenuItem2,
             this.menuFilePending,
+            this.toolStripMenuItem6,
+            this.menuFileSave,
+            this.menuFileFind,
+            this.toolStripMenuItem2,
             this.menuFileConfirm,
             this.toolStripMenuItem3,
             this.menuFilePlaylist,
@@ -176,7 +176,7 @@
             // 
             this.menuFileScan.Image = global::CAINClient.Properties.Resources.folder_magnify;
             this.menuFileScan.Name = "menuFileScan";
-            this.menuFileScan.Size = new System.Drawing.Size(236, 22);
+            this.menuFileScan.Size = new System.Drawing.Size(225, 22);
             this.menuFileScan.Text = "Escanear carpetas...";
             this.menuFileScan.Click += new System.EventHandler(this.menuFileScan_Click);
             // 
@@ -185,89 +185,89 @@
             this.menuFileUpdate.Image = global::CAINClient.Properties.Resources.arrow_refresh;
             this.menuFileUpdate.Name = "menuFileUpdate";
             this.menuFileUpdate.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.menuFileUpdate.Size = new System.Drawing.Size(236, 22);
+            this.menuFileUpdate.Size = new System.Drawing.Size(225, 22);
             this.menuFileUpdate.Text = "Actualizar información";
             this.menuFileUpdate.Click += new System.EventHandler(this.menuFileUpdate_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(233, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(222, 6);
             // 
             // menuFileColumns
             // 
             this.menuFileColumns.Image = global::CAINClient.Properties.Resources.eye;
             this.menuFileColumns.Name = "menuFileColumns";
-            this.menuFileColumns.Size = new System.Drawing.Size(236, 22);
+            this.menuFileColumns.Size = new System.Drawing.Size(225, 22);
             this.menuFileColumns.Text = "Mostrar columnas...";
             this.menuFileColumns.Click += new System.EventHandler(this.menuFileColumns_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(233, 6);
-            // 
-            // menuFileFind
-            // 
-            this.menuFileFind.Image = global::CAINClient.Properties.Resources.wand;
-            this.menuFileFind.Name = "menuFileFind";
-            this.menuFileFind.Size = new System.Drawing.Size(236, 22);
-            this.menuFileFind.Text = "Asistente de catalogación...";
-            this.menuFileFind.Click += new System.EventHandler(this.menuFileFind_Click);
-            // 
-            // menuFileSave
-            // 
-            this.menuFileSave.Image = global::CAINClient.Properties.Resources.disk;
-            this.menuFileSave.Name = "menuFileSave";
-            this.menuFileSave.Size = new System.Drawing.Size(236, 22);
-            this.menuFileSave.Text = "Guardar cambios";
-            this.menuFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(233, 6);
             // 
             // menuFilePending
             // 
             this.menuFilePending.Image = global::CAINClient.Properties.Resources.error;
             this.menuFilePending.Name = "menuFilePending";
-            this.menuFilePending.Size = new System.Drawing.Size(236, 22);
+            this.menuFilePending.Size = new System.Drawing.Size(225, 22);
             this.menuFilePending.Text = "Ver sólo archivos pendientes";
             this.menuFilePending.Click += new System.EventHandler(this.menuFilePending_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(222, 6);
+            // 
+            // menuFileSave
+            // 
+            this.menuFileSave.Image = global::CAINClient.Properties.Resources.disk;
+            this.menuFileSave.Name = "menuFileSave";
+            this.menuFileSave.Size = new System.Drawing.Size(225, 22);
+            this.menuFileSave.Text = "Guardar cambios";
+            this.menuFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
+            // 
+            // menuFileFind
+            // 
+            this.menuFileFind.Image = global::CAINClient.Properties.Resources.wand;
+            this.menuFileFind.Name = "menuFileFind";
+            this.menuFileFind.Size = new System.Drawing.Size(225, 22);
+            this.menuFileFind.Text = "Asistente de catalogación...";
+            this.menuFileFind.Click += new System.EventHandler(this.menuFileFind_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 6);
             // 
             // menuFileConfirm
             // 
             this.menuFileConfirm.Image = global::CAINClient.Properties.Resources.tag_green;
             this.menuFileConfirm.Name = "menuFileConfirm";
-            this.menuFileConfirm.Size = new System.Drawing.Size(236, 22);
-            this.menuFileConfirm.Text = "Cambiar estado a \'Catalogado\'";
+            this.menuFileConfirm.Size = new System.Drawing.Size(225, 22);
+            this.menuFileConfirm.Text = "Confirmar catalogación";
             this.menuFileConfirm.Click += new System.EventHandler(this.menuFileConfirm_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(233, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 6);
             // 
             // menuFilePlaylist
             // 
             this.menuFilePlaylist.Image = global::CAINClient.Properties.Resources.music;
             this.menuFilePlaylist.Name = "menuFilePlaylist";
-            this.menuFilePlaylist.Size = new System.Drawing.Size(236, 22);
+            this.menuFilePlaylist.Size = new System.Drawing.Size(225, 22);
             this.menuFilePlaylist.Text = "Crear lista de reproducción...";
             this.menuFilePlaylist.Click += new System.EventHandler(this.menuFilePlaylist_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(233, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(222, 6);
             // 
             // menuFileExit
             // 
             this.menuFileExit.Image = global::CAINClient.Properties.Resources.door_in;
             this.menuFileExit.Name = "menuFileExit";
             this.menuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.menuFileExit.Size = new System.Drawing.Size(236, 22);
+            this.menuFileExit.Size = new System.Drawing.Size(225, 22);
             this.menuFileExit.Text = "Salir";
             this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
@@ -359,8 +359,8 @@
             this.toolStripSeparator1,
             this.toolFileColumns,
             this.toolStripSeparator2,
-            this.toolFileFind,
             this.toolFileSave,
+            this.toolFileFind,
             this.toolStripSeparator3,
             this.toolFilePending,
             this.toolFileConfirm,
@@ -418,17 +418,6 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolFileFind
-            // 
-            this.toolFileFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolFileFind.Image = global::CAINClient.Properties.Resources.wand;
-            this.toolFileFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolFileFind.Name = "toolFileFind";
-            this.toolFileFind.Size = new System.Drawing.Size(23, 22);
-            this.toolFileFind.Text = "toolStripButton4";
-            this.toolFileFind.ToolTipText = "Asistente de catalogación...";
-            this.toolFileFind.Click += new System.EventHandler(this.menuFileFind_Click);
-            // 
             // toolFileSave
             // 
             this.toolFileSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -439,6 +428,17 @@
             this.toolFileSave.Text = "toolStripButton5";
             this.toolFileSave.ToolTipText = "Guardar cambios";
             this.toolFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
+            // 
+            // toolFileFind
+            // 
+            this.toolFileFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolFileFind.Image = global::CAINClient.Properties.Resources.wand;
+            this.toolFileFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolFileFind.Name = "toolFileFind";
+            this.toolFileFind.Size = new System.Drawing.Size(23, 22);
+            this.toolFileFind.Text = "toolStripButton4";
+            this.toolFileFind.ToolTipText = "Asistente de catalogación...";
+            this.toolFileFind.Click += new System.EventHandler(this.menuFileFind_Click);
             // 
             // toolStripSeparator3
             // 
@@ -453,7 +453,7 @@
             this.toolFilePending.Name = "toolFilePending";
             this.toolFilePending.Size = new System.Drawing.Size(23, 22);
             this.toolFilePending.Text = "toolStripButton6";
-            this.toolFilePending.ToolTipText = "Ver sólo archivos pendientes";
+            this.toolFilePending.ToolTipText = "Ver sólo pendientes";
             this.toolFilePending.Click += new System.EventHandler(this.menuFilePending_Click);
             // 
             // toolFileConfirm
@@ -990,52 +990,52 @@
             this.toolStripMenuItem10,
             this.menuPlaylist});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(236, 110);
+            this.contextMenu.Size = new System.Drawing.Size(226, 110);
             // 
             // menuFind
             // 
             this.menuFind.Image = global::CAINClient.Properties.Resources.wand;
             this.menuFind.Name = "menuFind";
-            this.menuFind.Size = new System.Drawing.Size(235, 22);
+            this.menuFind.Size = new System.Drawing.Size(225, 22);
             this.menuFind.Text = "Asistente de catalogación...";
             this.menuFind.Click += new System.EventHandler(this.menuFileFind_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(232, 6);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(222, 6);
             // 
             // menuAsign
             // 
             this.menuAsign.Image = global::CAINClient.Properties.Resources.cd;
             this.menuAsign.Name = "menuAsign";
-            this.menuAsign.Size = new System.Drawing.Size(235, 22);
+            this.menuAsign.Size = new System.Drawing.Size(225, 22);
             this.menuAsign.Text = "Asignar al álbum...";
             this.menuAsign.Click += new System.EventHandler(this.btnAlbum_Click);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(232, 6);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(222, 6);
             // 
             // menuStatus
             // 
             this.menuStatus.Image = global::CAINClient.Properties.Resources.tag_green;
             this.menuStatus.Name = "menuStatus";
-            this.menuStatus.Size = new System.Drawing.Size(235, 22);
-            this.menuStatus.Text = "Cambiar estado a \'Catalogada\'";
+            this.menuStatus.Size = new System.Drawing.Size(225, 22);
+            this.menuStatus.Text = "Confirmar catalogación";
             this.menuStatus.Click += new System.EventHandler(this.menuFileConfirm_Click);
             // 
             // toolStripMenuItem10
             // 
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(232, 6);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(222, 6);
             // 
             // menuPlaylist
             // 
             this.menuPlaylist.Image = global::CAINClient.Properties.Resources.music;
             this.menuPlaylist.Name = "menuPlaylist";
-            this.menuPlaylist.Size = new System.Drawing.Size(235, 22);
+            this.menuPlaylist.Size = new System.Drawing.Size(225, 22);
             this.menuPlaylist.Text = "Crear lista de reproducción...";
             this.menuPlaylist.Click += new System.EventHandler(this.menuFilePlaylist_Click);
             // 
@@ -1054,6 +1054,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.toolBar.ResumeLayout(false);
